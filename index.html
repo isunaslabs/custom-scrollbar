@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*Custom scrollbar starts here*/
+        .custom-scrollbar {
+            /*Allow smooth scrolling on iOS devices*/
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        @media (min-width: 1024px) {
+            .custom-scrollbar {
+                overflow: auto;
+            }
+            /*Works on Mozilla*/
+            .custom-scrollbar {
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255,255,255,0.7) rgba(255,255,255,0.2);
+            }
+            .custom-scrollbar:hover {
+                scrollbar-color: rgba(255,255,255,1) rgba(255,255,255,0.2);
+            }
+            /*Works on Chrome, Safari, Opera and others with webkit kernel*/
+            /* width */
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 10px;
+                height: 10px;
+            }
+
+            /* Track */
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: rgba(255,255,255,0.2);
+                border-radius: 8px;
+            }
+
+            /* Handle */
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: rgba(255,255,255,0.7);
+                border-radius: 8px;
+            }
+            /* Handle on hover */
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: rgba(255,255,255,1);
+            }
+        }
+
+        /*Custom scrollbar ends here*/
+
+
+
+        body {
+            margin: 0;
+        }
+        .wrapper {
+            background-color: black;
+            height: 500px;
+            padding: 60px;
+            overflow: hidden;
+            display: flex;
+        }
+        .left,
+        .right {
+            flex: 1;
+        }
+        .content {
+            background-color: yellow;
+            min-width: 1200px;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left" style="color: white;">
+            <div>Left</div>
+        </div>
+        <div class="right custom-scrollbar">
+            <div class="content">Start Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi, blanditiis cupiditate dolor eos eum fugiat maiores maxime mollitia nihil nulla odio odit quae quidem quod ratione sed soluta voluptate. end</div>
+        </div>
+    </div>
+</body>
+</html>
